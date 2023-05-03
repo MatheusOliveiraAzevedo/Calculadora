@@ -7,8 +7,6 @@ var numero = 0;
 var segundoNum = 0;
 var clicado;
 
-console.log("ola")
-
 
 botoes.addEventListener("click", function(event){
 
@@ -19,7 +17,7 @@ botoes.addEventListener("click", function(event){
     if (clicado === "/" || clicado === "X" || clicado === "-" || clicado === "+") {
         operador = clicado
     } else if (clicado >= 0 || clicado <= 9) {
-
+        
         if (operador == null) {
             numero = parseInt(numero + clicado);
             numDisplay.textContent = numero
@@ -27,9 +25,8 @@ botoes.addEventListener("click", function(event){
             segundoNum = parseInt(segundoNum + clicado);
             numDisplay.textContent = segundoNum
         }
-
-
     }
+    
     if (clicado === "=") {
         //chamar função de calculo
         numDisplay.textContent = calculo(numero, segundoNum, operador)
@@ -37,9 +34,8 @@ botoes.addEventListener("click", function(event){
         operador = null
         segundoNum = 0
     }   
+    
     if (clicado === "AC") {
-
-        console.log("entrei")
         operador = null
         numero = 0
         segundoNum = 0
